@@ -1,0 +1,51 @@
+body{
+	margin: 0px;
+	background-image: url("img/f.jpg");
+
+}
+.spacer{
+	margin-top: 20px;	
+}
+.container{
+	margin-top: 40px;
+}
+.nav{
+	background-color: black;
+	color: black;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav-item{
+	border-right: 1px solid black;
+	color: black;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th{
+	background-color: #4288CA;
+	color: #ffffff;
+}
+.clickable{
+	cursor: pointer;
+}
+.btn {
+	border: 1px solid black;
+	border-radius: 15px;
+	color: blue;
+	background-color: black;
+	height: 30px;
+	color: white;
+}
+.form-control{
+	border: 1px solid black;
+	border-radius: 15px;
+	height: 30px;
+}
+.form-control:hover{
+	border-color: black;
+
+}
+.well{
+	margin-top: 20px;
+}

@@ -7,7 +7,7 @@ class Database
 	private $username;
 	private $password;
 
-	public function __construct($database = "database-music", $username = "root", $password = "R00t1234")
+	public function __construct($database = "database_music", $username = "root", $password = "")
 	{
 		$this->connection($database, $username, $password);
 	}

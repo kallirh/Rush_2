@@ -2,28 +2,25 @@
         limit = $(this).val();
                 window.localStorage.setItem("limit", limit);
       });
-
         $("#search").attr("placeholder", "Recherche artiste...");
         $.getJSON(
 			"results.json",
 			function (key, value) {
-            	id = 1
-            	console.log(key['results']['liste_artiste']);
             	i = 0
             	limit = localStorage.getItem('limit');
-                console.log(limit);
+                console.log(key);
             	max = key['results']['liste_artiste'].length
-            	while(i <= limit-1)
+            	while(i <= limit)
             	{
+                id = key['results']['liste_artiste'][i]['id'];
+                console.log(id);
             	name = key['results']['liste_artiste'][i]['name'];
             	bio = key['results']['liste_artiste'][i]['bio'];
             	description = key['results']['liste_artiste'][i]['description'];
             	photo = key['results']['liste_artiste'][i]['photo'];
 
-                album = key['results']['liste_albums'][i]['name'];
-                cover = key['results']['liste_albums'][i]['cover_small'];
-                popularity = key['results']['liste_albums'][i]['popularity'];
-                console.log(album);
+                albums = key['results']['liste_albums'][id];
+                test += albums+" - ";
             	i++
 
 
@@ -35,9 +32,7 @@
             		description : description,
             		photo : photo,
 
-                    album : album,
-                    cover : cover,
-                    popularity
+                    album : albums
             	};
 
     // génération du HTML
@@ -47,5 +42,7 @@
     $('#example').append(rendu);
 
 				}
+                //console.log(test.toString());
+                console.log(JSON.stringify(test));
 
 });

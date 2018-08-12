@@ -29,6 +29,10 @@ class Search extends Database
 		$query = $this->select('*', 'artists WHERE name LIKE "%'.$name.'%"');
 		return $query;
 	}
-
+	public function searchAlbumsOf($id_artist)
+	{
+		$albums = $this->select('*', '`albums` WHERE `artist_id` = '.$id_artist.'');
+		return $albums;
+	}
 
 }

@@ -13,7 +13,7 @@ class Artist extends Database
 public function getArtistInfo($name)
 	{
 		$artists = $this->select('artists.name as name, artists.bio as bio, 
-			artists.description as description, 
+			albums.name as albums, artists.description as desc, 
 			artists.photo as photo', 'artists 
 			left join albums on artists.id = albums.artist_id 
 			where artists.name like "%'.$name.'%"');
