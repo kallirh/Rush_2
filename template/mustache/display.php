@@ -44,8 +44,6 @@ elseif($root === "search_artists" || $root === "listing_artists")
 		<li><strong>Biographie</strong> : {{bio}}</li>
 		<li><strong>Description</strong> : {{description}}</li>
 		<li><strong>Photo</strong> : <img src="{{photo}}"></li>
-		<div id="display_album"> 
-		<button>Afficher tous les albums</button></div>
 		<li id="albums"><strong>Albums</strong> : {{album}}</li>
 	</script>
 	<script type="text/javascript" src="javascript/mustache/listing/listing_artists.js">

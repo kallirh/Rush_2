@@ -61,8 +61,20 @@ switch($_GET['root'])
 	{
 		$query = $pdo->searchArtists($search);
 		$return['liste_artiste'] = $query;
+		$return['liste_albums'] = [];
 		$results = $pdo->return_json(true, "Liste artiste contenant :".$search."", $return);
-//echo json_encode($results);
+
+	foreach ($results as $key) {
+	}
+	for ($i=0; $i < count($key['liste_artiste']) ; $i++) { 
+	//var_dump($key['liste_artiste'][$i]['id']);
+		$id_artist = $key['liste_artiste'][$i]['id'];
+		$albums = $pdo->searchAlbumsOf($id_artist);
+		foreach($albums as $list){
+			$return['liste_albums'][$id_artist] .= $list['name'].". ";
+		}
+	}
+		$results = $pdo->return_json(true, "Liste album contenant :".$search."", $return);
 	}
 	break;
 
@@ -100,20 +112,23 @@ switch($_GET['root'])
 	case 'listing_artists' :
 	$query = $pdo->getAllArtists();
 	$return['liste_artiste'] = $query;
+	$return['liste_albums'] = [];
 	$results = $pdo->return_json(true, "Liste tous artistes", $return);
-	foreach ($results as $key) {
+	/*foreach ($results as $key) {
 	}
 	for ($i=0; $i < count($key['liste_artiste']) ; $i++) { 
-	//var_dump($key['liste_artiste'][$i]['id']);
-		$albums = $pdo->getAlbumsOf($key['liste_artiste'][$i]['id']);
+		$id_artist = $key['liste_artiste'][$i]['id'];
+	//var_dump($id_artist);
+		$albums = $pdo->searchAlbumsOf($id_artist);
 		foreach($albums as $list){
-
+			if(isset($return['liste_albums']))
+			{
 			//var_dump($list);
-			$return['liste_albums'][$i] = $list;
+			$return['liste_albums'][$id_artist] .= $list['name'].'. ';}
 		}
 	}
 	$results = $pdo->return_json(true, "Liste tous artistes", $return);
-
+*/
 //echo json_encode($results);
 
 	break;

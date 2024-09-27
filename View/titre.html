@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" ng-app>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="albums.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+
+        <style type="text/css">
+            table{
+                width:80%;
+                border-radius: 10px;
+                margin-top: 60px;
+                margin-left: 20px;
+                text-align: center;
+            }
+            th{
+                background-color: red;
+            }
+
+            table, th, td{
+                border:solid 1px grey;
+                background-color: white;
+                text-align: center;
+
+            }
+        </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="html-table-search.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('table.search-table').tableSearch({
+                    searchText:'Recherche Music',
+                    searchPlaceHolder:'Input Value'
+                });
+            });
+        </script>
+
+    
+</head>
+
+<body>
+        <ul class="nav nav-tabs nav-justified purple lighten-2 mx-0 mb-0 mt-1">
+            
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="albums.html">MUSIC ALBUM</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="titre.html">ALL TITRES</a>
+            </li>
+            
+        </ul>
+        <table class="search-table">
+            <thead>
+                <tr>
+                    <th>Titres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Allen</td>
+                </tr>
+                <tr>
+                    <td>James Mark</td>                
+                </tr>
+                <tr>
+                    <td>Christine Augilera</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
+       
+</body>
+</html>
